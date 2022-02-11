@@ -1,0 +1,17 @@
+POST  http://localhost:3001/api/notes 
+Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjNlMDFhM2FjZGM5ZjQxOTYzYjMwMyIsInVzZXJuYW1lIjoiZXNlbHZhOTIiLCJpYXQiOjE2NDMzNzI1ODEsImV4cCI6MTY0Mzk3NzM4MX0.JJXLhWzBLt5fIYEk7aPgaETK5S6I4nBJ5K7eMpQ_9QA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjNlMDc0M2FjZGM5ZjQxOTYzYjMxNCIsInVzZXJuYW1lIjoiZXNlbHZhOTIgb3RybyIsImlhdCI6MTY0MzM3MjY2OSwiZXhwIjoxNjQzOTc3NDY5fQ.Mke9ZtjJur4186lNSp92TOSmE5MXW4Nmx_dieNYFfJ8
+
+{
+  "content": "Test note from vcode request con middleware",
+  "important": true
+}
+
+###
+
+POST  http://localhost:3001/api/notes 
+Content-Type: application/json
+
+{
+}
