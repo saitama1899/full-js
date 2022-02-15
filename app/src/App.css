@@ -1,4 +1,7 @@
 .error {
   border-style: solid;
   border-color: red;
+  width: max-content;
+  padding: 2px;
+  background-color: #fff7f7;
 }

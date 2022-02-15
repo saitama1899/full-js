@@ -2,12 +2,17 @@ import { React, useState } from 'react'
 // import PropTypes from 'prop-types'
 
 import Togglable from './Togglable'
+import Notification from './Notification'
 import { login } from '../services/users'
 import noteService from '../services/notes'
+import { useErrorMessage } from '../hooks/useErrorMessage'
+import { useNavigate  } from 'react-router-dom'
 
-export default function LoginForm ({ addUser, addErrorMessage = null }) {
+export default function LoginForm ({ addUser }) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const { errorMessage, addErrorMessage } = useErrorMessage()
+  const navigate = useNavigate ()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -27,6 +32,7 @@ export default function LoginForm ({ addUser, addErrorMessage = null }) {
       addUser(user)
       setUsername('')
       setPassword('')
+      navigate('/notes')
     } catch (error) {
       addErrorMessage('Wrong credentials')
       setTimeout(() => {
@@ -59,6 +65,7 @@ export default function LoginForm ({ addUser, addErrorMessage = null }) {
         </div>
         <button id='form-login-button'>Login</button>
       </form>
+      <Notification message={errorMessage}></Notification>
     </Togglable>
   )
 }
